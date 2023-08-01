@@ -1,0 +1,9 @@
+<%- include('../partials/header') %> 
+
+<% users.forEach(user => { %>
+    <div class="card p-2 shadow rounded my-2 w-50 mx-auto">
+        <h1><%= user.fullName %></h1>
+    </div>
+<% }) %>
+
+<%- include('../partials/footer') %> 

@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+
+<h1 class="text-primary">All Comments!</h1>
+    <% comments.forEach(comment => { %>
+     
+        <div class="text-center p-3 m-3 bg-light">
+            <h2 class="text-center my-1"><%=comment.content%></h2>
+            <div class="clearfix">
+                <h2 class="text-primary float-end"><%=comment.author.fullName%></h2>
+            </div>
+            <a href="/posts/<%=comment.post%>" class="btn btn-info my-2">View Post</a>
+        </div>
+    <% }) %>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    build: 
+      args:
+        - NODE_ENV=developement
+    command: ["npm", "run","dev"]  
+   

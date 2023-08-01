@@ -1,0 +1,11 @@
+<%- include('../partials/header') %> 
+
+    <form action="/users/new" method="post" class="form-control m-5 p-3 w-50">
+            <h4 class="text-primary m-2">Increase Your Social Worth now!</h4>
+                <label for="name">Enter Name:</label>
+                <br>
+                <input type="text" name="name" id="name" value="<%=name%>" class="form-control" title="Use only Alphabetic Letters [Az-Zz]">
+            <button class="btn btn-lg btn-primary w-25 m-3" type="submit">Sign In</button>
+    </form>
+
+<%- include('../partials/footer') %> 

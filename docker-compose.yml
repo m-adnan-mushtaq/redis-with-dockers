@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+  mongo:
+    container_name: mongodb
+    image: mongo:6.0-jammy
+    command: mongod --quiet --logpath /dev/null
+    volumes:
+      - data:/app/db:rw
+    networks:
+      - social-network
+    ports:
+      - 27017:27017
+  redis:
+    container_name: redisDB
+    image: redis:7.0-alpine
+    volumes:
+      - cache:/app/cache:rw
+    networks:
+      - social-network
+    ports:
+      - 6379:6379
+
+  web:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - social-network
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+      - redis
+networks:
+  social-network:
+    driver: bridge
+volumes:
+  data:
+  cache:

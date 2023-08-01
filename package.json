@@ -1,0 +1,23 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "startCluster": "pm2 start server.js --name dSocial-app -i max",
+    "devCluster": "pm2 start server.js --name dSocial-app -i max --watch && pm2 logs",
+    "dev": "node --watch server.js",
+    "stop": "pm2 kill"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.1.4",
+    "redis": "^4.6.6"
+  }
+}

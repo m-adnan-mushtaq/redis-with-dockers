@@ -1,0 +1,54 @@
+<%- include('../partials/header') %>
+
+    <div class="text-center p-3 m-3 bg-light">
+        <h1 class="text-center my-1">
+            <%=post.title%>
+        </h1>
+        <div class="float-right m-auto my-1 text-info">
+            <%=post.author.name%>
+        </div>
+        <div class="float-right m-auto my-1 text-primary">
+            <%=post.admin%>
+        </div>
+        <p class="my-2">
+            <%=post.content%>
+        </p>
+    </div>
+
+    <div class="clearfix">
+        <div class="">
+            <form action="/comments/new" method="post" class="form-control w-75 mx-auto  my-3 p-2">
+                <div class="input-box my-2">
+                    <label for="title">Content</label>
+                    <textarea name="content" id="content" rows="5" class="form-control"></textarea>
+                </div>
+                <input type="hidden" name="post" value="<%=post._id%>">
+                <div class="input-box my-2">
+                    <label for="author">Author</label>
+                    <select name="author" id="author" class="form-control">
+                        <% authors.forEach(author=>{%>
+                            <option value="<%=author._id%>">
+                                <%=author.name%>
+                            </option>
+                            <%})%>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Comment</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <h2>Comments</h2>
+
+    <% if (comments.length) { %>
+        <% comments.forEach(comment=>{%>
+            <div>
+                <p class="fw-bold">
+                   Auhtor: <%=comment.author.name%>
+                </p>
+                <p class="lead">  <%=comment.content %> </p>
+            </div>
+            <%})%>
+                <% } %>
+
+                    <%- include('../partials/footer') %>
