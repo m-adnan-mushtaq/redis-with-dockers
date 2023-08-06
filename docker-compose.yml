@@ -19,7 +19,6 @@ services:
       - social-network
     ports:
       - 6379:6379
-
   web:
     container_name: server
     build:
@@ -34,6 +33,17 @@ services:
     depends_on:
       - mongo
       - redis
+  proxy:
+    container_name: proxy
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
+    networks:
+      - social-network
+
 networks:
   social-network:
     driver: bridge
