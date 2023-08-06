@@ -5,6 +5,7 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original.svg" title="MongoDB" alt="MongoDb" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
 </div>
+
 # Dockerizing Node.js Express Application with Mongoose, Redis, and Nginx
 
 This repository contains an example Node.js Express application that uses Mongoose for database interactions and Redis for caching. We will also be using Nginx as a reverse proxy to handle incoming requests and distribute the load among multiple instances of the Node.js application.
